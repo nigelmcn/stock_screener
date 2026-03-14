@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Universe Editor</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      textarea {
+        width: 100%;
+        height: 400px;
+        font-family: monospace;
+        font-size: 12px;
+      }
+      .buttons {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Screening Universe</h2>
+    <p>
+      Enter one ticker per line (stocks or ETFs). Commas are also accepted and
+      will be split into separate tickers. Tickers are stored in
+      <code>universe.txt</code>.
+    </p>
+
+    <form method="post">
+      <textarea name="tickers">{{ tickers_text }}</textarea>
+      <div class="buttons">
+        <button type="submit">Save Universe</button>
+        <a href="{{ url_for('index') }}" style="margin-left: 10px"
+          >Back to Screener</a
+        >
+      </div>
+    </form>
+  </body>
+</html>
